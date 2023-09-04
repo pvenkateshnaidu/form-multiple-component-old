@@ -13,7 +13,7 @@ import {
 })
 export class AppComponent implements OnInit {
   name = 'Angular';
-  addrFrom: FormGroup;
+  parentForm: FormGroup;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   createForm() {
-    this.addrFrom = this.fb.group({
+    this.parentForm = this.fb.group({
       name: 'Haider',
       home: this.fb.group({}),
       office: this.fb.group({

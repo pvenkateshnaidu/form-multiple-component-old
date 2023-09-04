@@ -14,14 +14,14 @@ import {
 })
 export class AddressComponent implements OnInit {
   @Input() home: FormGroup;
-  home1: FormGroup;
+  parentformAcessChild: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
 
   ngOnInit() {
-    this.home1 = this.rootFormGroup.control;
+    this.parentformAcessChild = this.rootFormGroup.control;
     this.home.addControl('zip', new FormControl('', Validators.required));
     this.home.addControl('street', new FormControl('', Validators.required));
     this.home.addControl('city', new FormControl('', Validators.required));
-    console.log('Home FormGroup is ', this.home1);
+    console.log('Home FormGroup is ', this.parentformAcessChild);
   }
 }

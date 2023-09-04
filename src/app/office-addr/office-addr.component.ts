@@ -14,10 +14,10 @@ import {
 })
 export class OfficeAddrComponent implements OnInit {
   @Input('office') office: FormGroup;
-  allform: FormGroup;
+  parentformAcessOfficeChild: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
 
   ngOnInit() {
-    this.allform = this.rootFormGroup.control;
+    this.parentformAcessOfficeChild = this.rootFormGroup.control;
   }
 }

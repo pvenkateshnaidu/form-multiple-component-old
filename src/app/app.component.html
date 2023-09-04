@@ -1,13 +1,11 @@
 <!-- https://stackoverflow.com/questions/43270564/dividing-a-form-into-multiple-components-with-validation -->
 
 <!-- <app-form-class></app-form-class> -->
-<form [formGroup]="addrFrom">
+<form [formGroup]="parentForm">
   Name : <input type="text" formControlName="name" />
 
-  <app-address [home]="addrFrom.get('home')"></app-address>
+  <app-address [home]="parentForm.get('home')"></app-address>
 
-  <app-office-addr [office]="addrFrom.get('office')"></app-office-addr>
+  <app-office-addr [office]="parentForm.get('office')"></app-office-addr>
 </form>
-<pre
-  >{{ addrFrom.value | json }}
-</pre>
+{{ parentForm.status }}
