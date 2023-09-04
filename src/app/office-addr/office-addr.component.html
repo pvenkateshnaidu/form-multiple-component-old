@@ -1,0 +1,8 @@
+<p>Office Address</p>
+
+<form [formGroup]="office">
+  <input type="text" formControlName="street" placeholder="street" />
+  <p></p>
+  <input type="text" formControlName="city" placeholder="city" />
+</form>
+{{ allform.value | json }}

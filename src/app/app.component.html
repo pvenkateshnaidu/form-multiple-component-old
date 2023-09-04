@@ -1,0 +1,13 @@
+<!-- https://stackoverflow.com/questions/43270564/dividing-a-form-into-multiple-components-with-validation -->
+
+<!-- <app-form-class></app-form-class> -->
+<form [formGroup]="addrFrom">
+  Name : <input type="text" formControlName="name" />
+
+  <app-address [home]="addrFrom.get('home')"></app-address>
+
+  <app-office-addr [office]="addrFrom.get('office')"></app-office-addr>
+</form>
+<pre
+  >{{ addrFrom.value | json }}
+</pre>

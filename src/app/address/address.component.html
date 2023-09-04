@@ -1,0 +1,20 @@
+<p>Home Address</p>
+<form [formGroup]="home">
+  <input type="text" formControlName="street" placeholder="street" />
+  <app-error
+    *ngIf="
+      home.get('street').hasError('required') && home.get('street').touched
+    "
+    >The Street is required</app-error
+  >
+  <p></p>
+  <input type="text" formControlName="city" placeholder="city" />
+  <app-error
+    *ngIf="home.get('city').hasError('required') && home.get('city').touched"
+    >The City is required</app-error
+  >
+  <p></p>
+  <input type="text" formControlName="zip" placeholder="zip" />
+ 
+</form>
+{{ home1.value | json }}
