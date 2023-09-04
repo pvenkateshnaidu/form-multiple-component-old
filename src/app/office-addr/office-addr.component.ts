@@ -13,13 +13,13 @@ import {
   styleUrls: ['./office-addr.component.css'],
 })
 export class OfficeAddrComponent implements OnInit {
-  @Input('office') office: FormGroup;
+  @Input() form: FormGroup;
   parentformAcessOfficeChild: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
 
   ngOnInit() {
     this.parentformAcessOfficeChild = this.rootFormGroup.control;
-    this.office.addControl('street', new FormControl('', Validators.required));
-    this.office.addControl('city', new FormControl('', Validators.required));
+    this.form.addControl('street', new FormControl('', Validators.required));
+    this.form.addControl('city', new FormControl('', Validators.required));
   }
 }

@@ -13,15 +13,15 @@ import {
   styleUrls: ['./address.component.css'],
 })
 export class AddressComponent implements OnInit {
-  @Input() home: FormGroup;
+  @Input() form: FormGroup;
   parentformAcessChild: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
 
   ngOnInit() {
     this.parentformAcessChild = this.rootFormGroup.control;
-    this.home.addControl('zip', new FormControl('', Validators.required));
-    this.home.addControl('street', new FormControl('', Validators.required));
-    this.home.addControl('city', new FormControl('', Validators.required));
+    this.form.addControl('zip', new FormControl('', Validators.required));
+    this.form.addControl('street', new FormControl('', Validators.required));
+    this.form.addControl('city', new FormControl('', Validators.required));
     console.log('Home FormGroup is ', this.parentformAcessChild);
   }
 }
