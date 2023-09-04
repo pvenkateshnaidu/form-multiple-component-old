@@ -1,3 +1,4 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -22,12 +23,8 @@ export class AppComponent implements OnInit {
 
   createForm() {
     this.parentForm = this.fb.group({
-      name: 'Haider',
-      home: this.fb.group({}),
-      office: this.fb.group({
-        street: ['', Validators.required],
-        city: ['', Validators.required],
-      }),
+      home: new FormGroup({}),
+      office: new FormGroup({}),
     });
   }
 }

@@ -19,5 +19,7 @@ export class OfficeAddrComponent implements OnInit {
 
   ngOnInit() {
     this.parentformAcessOfficeChild = this.rootFormGroup.control;
+    this.office.addControl('street', new FormControl('', Validators.required));
+    this.office.addControl('city', new FormControl('', Validators.required));
   }
 }
